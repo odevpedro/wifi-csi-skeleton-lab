@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: wifi-csi-skeleton-lab
+
+csi:
+  window:
+    size-seconds: 1
+    samples-per-window: 20
+    update-interval-ms: 500
+  baseline:
+    default-mean-energy: 10.0
+    default-std-dev: 0.3
+    default-noise-floor: 0.5
+  manual-mode:
+    expiry-seconds: 10
