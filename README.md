@@ -88,6 +88,8 @@ docker compose up --build
 
 - Backend: `http://localhost:8080`
 - Frontend: `http://localhost:5173`
+- Swagger UI: `http://localhost:8080/swagger-ui.html`
+- OpenAPI spec (JSON): `http://localhost:8080/v3/api-docs`
 
 ### Variaveis de ambiente do simulador (docker-compose.yml)
 
@@ -130,6 +132,8 @@ cd backend
 | GET    | `/api/debug/simulator-status`           | Cenario ativo e stats            | Nao  |
 
 WebSocket: `ws://localhost:8080/ws` — topico `/topic/rooms/{roomId}/events`
+
+Documentacao interativa (Swagger UI): `http://localhost:8080/swagger-ui.html`
 
 ---
 

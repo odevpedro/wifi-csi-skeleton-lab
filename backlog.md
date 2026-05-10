@@ -97,6 +97,7 @@ Laboratorio experimental de Wi-Fi sensing usando CSI para detectar presenca, mov
 | 2026-05-10 | 43 testes unitarios passando (mvn test)                                                   |
 | 2026-05-10 | Docker Compose com healthcheck e dependencia entre servicos                               |
 | 2026-05-10 | README, backlog, system-feature-flows e data-model no padrao do projeto                  |
+| 2026-05-10 | Documentacao OpenAPI 3.x via springdoc-openapi 2.4.0 em todos os controllers             |
 
 ---
 
