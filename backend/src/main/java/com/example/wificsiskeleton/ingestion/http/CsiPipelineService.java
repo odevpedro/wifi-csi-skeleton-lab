@@ -75,6 +75,7 @@ public class CsiPipelineService {
         RoomStateEvent event = new RoomStateEvent(
                 System.currentTimeMillis(),
                 sample.roomId(),
+                sample.deviceId(),
                 detection.motionState(),
                 posture.postureState(),
                 posture.confidence(),

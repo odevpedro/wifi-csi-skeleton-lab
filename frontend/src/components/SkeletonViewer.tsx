@@ -24,6 +24,8 @@ const MOTION_COLORS: Record<MotionState, string> = {
   STRONG_MOTION: '#f44',
 }
 
+const TRANSITION = 'all 0.4s ease'
+
 interface Props {
   keypoints: BodyKeypoint[]
   motionState: MotionState
@@ -49,6 +51,7 @@ export default function SkeletonViewer({ keypoints, motionState, confidence }: P
             stroke={color}
             strokeWidth={3}
             opacity={opacity}
+            style={{ transition: TRANSITION }}
           />
         )
       })}
@@ -58,6 +61,7 @@ export default function SkeletonViewer({ keypoints, motionState, confidence }: P
           cx={k.x} cy={k.y} r={6}
           fill={color}
           opacity={Math.max(0.1, k.confidence)}
+          style={{ transition: TRANSITION }}
         />
       ))}
     </svg>

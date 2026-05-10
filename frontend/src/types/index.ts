@@ -38,6 +38,7 @@ export interface SkeletonFrame {
 export interface RoomStateEvent {
   timestamp: number
   roomId: string
+  deviceId: string
   motionState: MotionState
   postureState: PostureState
   confidence: number

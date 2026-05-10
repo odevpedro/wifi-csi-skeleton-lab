@@ -8,6 +8,7 @@ import com.example.wificsiskeleton.skeleton.SkeletonFrame;
 public record RoomStateEvent(
         long timestamp,
         String roomId,
+        String deviceId,
         MotionState motionState,
         PostureState postureState,
         double confidence,

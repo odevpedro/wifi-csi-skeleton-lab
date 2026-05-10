@@ -57,6 +57,7 @@ export default function App() {
           <div style={{ marginBottom: 8, fontSize: 13, color: '#888' }}>Sala: {ROOM_ID}</div>
           {latest ? (
             <>
+              <Row label="Dispositivo" value={latest.deviceId} color="#aaa" />
               <Row label="Movimento" value={latest.motionState} color="#4af" />
               <Row label="Postura" value={latest.postureState} color="#4fa" />
               <Row label="Confianca" value={`${(latest.confidence * 100).toFixed(0)}%`} color="#fa4" />
