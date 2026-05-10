@@ -28,24 +28,19 @@ O modelo de dados do MVP 0 e composto inteiramente por Java records imutaveis ma
 
 ## Diagrama de Registros
 
-```
-CsiSample (entrada)
-    |
-    v
-SampleBuffer (fila circular em memoria)
-    |
-    v
-CsiWindow (janela de ~20 amostras)
-    |
-    +----> MotionDetector ----> DetectionResult (MotionState + SignalSummary)
-    |
-    +----> PostureClassifier -> PostureClassification (PostureState + confidence)
-                |
-                v
-           SkeletonService -> SkeletonFrame (List<BodyKeypoint>)
-                |
-                v
-          RoomStateEvent (publicado via WebSocket)
+```mermaid
+flowchart TD
+    A[CsiSample - entrada via HTTP POST] --> B[SampleBuffer\nfila circular em memoria]
+    B --> C[CsiWindow\n~20 amostras / 1s]
+    C --> D[MotionDetector]
+    C --> E[PostureClassifier]
+    D --> F[DetectionResult\nMotionState + SignalSummary]
+    E --> G[PostureClassification\nPostureState + confidence]
+    G --> H[SkeletonService]
+    H --> I[SkeletonFrame\nList&lt;BodyKeypoint&gt;]
+    F --> J[RoomStateEvent]
+    I --> J
+    J --> K[WebSocket\n/topic/rooms/{roomId}/events]
 ```
 
 ---
