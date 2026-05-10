@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useWebSocket } from './hooks/useWebSocket'
 import SkeletonViewer from './components/SkeletonViewer'
 import SignalChart from './components/SignalChart'
@@ -16,9 +16,13 @@ export default function App() {
   const [history, setHistory] = useState<RoomStateEvent[]>([])
   const [chartData, setChartData] = useState<ChartPoint[]>([])
   const [manualActive, setManualActive] = useState(false)
+  const lastUpdate = useRef(0)
 
   useEffect(() => {
     if (!event) return
+    const now = Date.now()
+    if (now - lastUpdate.current < 500) return
+    lastUpdate.current = now
     setHistory((prev) => [...prev.slice(-(MAX_HISTORY - 1)), event])
     setChartData((prev) => [
       ...prev.slice(-(MAX_HISTORY - 1)),
