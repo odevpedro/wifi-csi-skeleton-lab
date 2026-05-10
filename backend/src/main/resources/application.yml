@@ -16,3 +16,9 @@ csi:
     default-noise-floor: 0.5
   manual-mode:
     expiry-seconds: 10
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
